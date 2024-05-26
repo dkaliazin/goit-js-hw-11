@@ -39,10 +39,23 @@ function onSearchImages(event) {
       });
     
     })
-    .catch(error => console.log(error))
+    .catch(error => {
+      iziToast.error({
+        message: `Something went wrong: ${error.message}`,
+      });
+    })
     .finally(() => {
       event.target.reset();
-      loader.classList.add('is-hidden');
+      hideLoader();
     });
 }
+
+function showLoader() {
+  loader.classList.remove('is-hidden');
+}
+
+function hideLoader() {
+  loader.classList.add('is-hidden');
+}
+
 form.addEventListener('submit', onSearchImages);
