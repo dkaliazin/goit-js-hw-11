@@ -23,3 +23,8 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+body {
+  padding: 30px;
+  
+  align-items: center;
+}
